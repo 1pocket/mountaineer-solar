@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Solar Savings Calculator | Mountaineer Solar</title>
+  <meta name="description" content="Estimate your WV solar system size, production, cost, and payback using our simple calculator.">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="brand">
+        <img src="assets/img/logo.svg" alt="" class="logo">
+        <div class="brandlines">
+          <h1 class="site">Mountaineer Solar</h1>
+          <p class="tagline">Locally Rooted • Future Focused</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="calculator.html" aria-current="page">Calculator</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container narrow">
+    <h2>Solar Savings Calculator</h2>
+    <p>Use your electric bill (or kWh usage) to estimate system size, production, cost, and simple payback. Numbers are ballpark—final proposals include a site visit and shading analysis.</p>
+
+    <form class="form" id="calcForm" onsubmit="return false;">
+      <fieldset class="card" style="border:none;">
+        <legend style="font-family:'Playfair Display',serif;font-weight:700;">Your Usage</legend>
+
+        <label>Monthly Electric Bill ($)
+          <input type="number" step="0.01" id="bill" placeholder="e.g., 150">
+        </label>
+
+        <label>or Monthly Usage (kWh)
+          <input type="number" step="1" id="kwh" placeholder="e.g., 1100">
+        </label>
+
+        <div class="grid-3">
+          <label>Utility Rate ($/kWh)
+            <input type="number" step="0.001" id="rate" value="0.13">
+          </label>
+          <label>Solar Production Factor (kWh per kW-year)
+            <input type="number" step="1" id="pf" value="1200">
+          </label>
+          <label>Installed Cost ($/W)
+            <input type="number" step="0.01" id="ppw" value="2.75">
+          </label>
+        </div>
+
+        <div class="grid-3">
+          <label>Battery (optional) — kWh size
+            <input type="number" step="1" id="batteryKwh" value="0">
+          </label>
+          <label>Battery Cost ($/kWh)
+            <input type="number" step="1" id="batteryPpkwh" value="900">
+          </label>
+          <label>ITC (Federal Tax Credit %)
+            <input type="number" step="1" id="itc" value="30">
+          </label>
+        </div>
+
+        <button class="cta" id="runCalc">Estimate Savings</button>
+      </fieldset>
+    </form>
+
+    <section class="card" id="results" style="display:none;">
+      <h3 style="margin-top:0;">Estimated System</h3>
+      <div class="grid-3">
+        <div>
+          <h4>System Size</h4>
+          <p><strong id="outSize">—</strong> kW DC</p>
+        </div>
+        <div>
+          <h4>Annual Production</h4>
+          <p><strong id="outAnnual">—</strong> kWh / yr</p>
+        </div>
+        <div>
+          <h4>Monthly Offset</h4>
+          <p><strong id="outOffset">—</strong> kWh / mo</p>
+        </div>
+      </div>
+
+      <div class="grid-3">
+        <div>
+          <h4>System Cost</h4>
+          <p>Before ITC: <strong id="outCostBefore">—</strong><br>
+             After ITC: <strong id="outCostAfter">—</strong></p>
+        </div>
+        <div>
+          <h4>Battery (if any)</h4>
+          <p>Added cost: <strong id="outBattCost">—</strong></p>
+        </div>
+        <div>
+          <h4>Payback (Simple)</h4>
+          <p><strong id="outPayback">—</strong> years</p>
+        </div>
+      </div>
+
+      <p class="fine">Assumptions: continuous load coverage not guaranteed; roof condition, shading, and interconnection can affect results. For a precise quote, <a href="contact.html">request a site visit</a>.</p>
+      <p><a href="contact.html" class="cta">Request a Precise Quote</a></p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/logo.svg" alt="" class="logo small">
+        <p>Serving all of West Virginia.</p>
+      </div>
+      <div>
+        <h5>Pages</h5>
+        <ul class="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p><a href="tel:+1-304-555-0123">304-555-0123</a><br>
+        <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/calc.js" defer></script>
+</body>
+</html>

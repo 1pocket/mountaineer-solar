@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Contact | Mountaineer Solar</title>
+  <meta name="description" content="Request a free solar quote from Mountaineer Solar.">
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+  <header class="masthead">
+    <div class="container masthead-inner">
+      <div class="brand">
+        <img src="assets/img/logo.svg" alt="" class="logo">
+        <div class="brandlines">
+          <h1 class="site">Mountaineer Solar</h1>
+          <p class="tagline">Locally Rooted • Future Focused</p>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="calculator.html">Calculator</a>
+        <a href="contact.html" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container narrow">
+    <h2>Request a Free Quote</h2>
+    <p>Fill this out and we’ll reach out with next steps.</p>
+
+    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
+      <input type="hidden" name="form-name" value="quote">
+      <p class="sr-only">
+        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
+      </p>
+
+      <label>Full Name
+        <input type="text" name="name" required>
+      </label>
+
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+
+      <label>Phone
+        <input type="tel" name="phone" placeholder="304-555-0123">
+      </label>
+
+      <label>Address (City / County)
+        <input type="text" name="address" placeholder="City, County">
+      </label>
+
+      <label>Property Type
+        <select name="type">
+          <option>Home</option>
+          <option>Farm / Off-Grid</option>
+          <option>Business / Church</option>
+        </select>
+      </label>
+
+      <label>Tell us about your goals
+        <textarea name="message" rows="5" placeholder="Lower bills, backup power, off-grid cabin..."></textarea>
+      </label>
+
+      <button type="submit" class="cta">Send</button>
+    </form>
+
+    <p class="contact-note">Prefer to call? <a href="tel:+1-304-555-0123">304-555-0123</a> or <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <img src="assets/img/logo.svg" alt="" class="logo small">
+        <p>Serving all of West Virginia.</p>
+      </div>
+      <div>
+        <h5>Pages</h5>
+        <ul class="list">
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="calculator.html">Calculator</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p><a href="tel:+1-304-555-0123">304-555-0123</a><br>
+        <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
