@@ -59,6 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
     outPayback.textContent = (paybackYrs === Infinity) ? '—' : fmt1(paybackYrs);
 
     results.style.display = 'block';
-    results.scrollIntoView({behavior:'smooth', block:'start'});
+    
+    // Populate hidden fields for lead capture form (if present)
+    const leadForm = document.querySelector('form[name="calculator_lead"]');
+    if (leadForm) {
+      const setHidden = (name, val) => {
+        const el = leadForm.querySelector(`input[name="${name}"]`);
+        if (el) el.value = (val ?? '').toString();
+      };
+      setHidden('bill', mBill);
+      setHidden('kwh', mKwh);
+      setHidden('system_size_kw', sizeKw.toFixed(1));
+      setHidden('system_cost_after_itc', Math.round(sysCostAfter));
+      setHidden('payback_years', paybackYears.toFixed(1));
+    }
+
+results.scrollIntoView({behavior:'smooth', block:'start'});
   });
 });

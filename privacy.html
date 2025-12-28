@@ -86,23 +86,6 @@
 </div>
 </div>
 </footer>
-
-<script data-utmfill="true">
-    (function() {
-      function getParam(name) {
-        try { return new URLSearchParams(window.location.search).get(name) || ''; }
-        catch(e) { return ''; }
-      }
-      function fillForm(form) {
-        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
-          var el=form.querySelector('input[name="'+k+'"]');
-          if (el) el.value=getParam(k);
-        });
-      }
-      document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('form').forEach(fillForm);
-      });
-    })();
-    </script>
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>

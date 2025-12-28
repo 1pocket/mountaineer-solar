@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
 <title>Mountaineer Solar | West Virginia’s Solar Energy Experts</title>
-<meta content="Locally rooted, future-focused. Mountaineer Solar brings premium SunPower panels to West Virginia homes, farms, and businesses." name="description"/>
+<meta content="Locally rooted, future-focused. Mountaineer Solar brings premium premium panels to West Virginia homes, farms, and businesses." name="description"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
@@ -51,6 +51,7 @@
 <input name="utm_campaign" type="hidden"/>
 <input name="utm_term" type="hidden"/>
 <input name="utm_content" type="hidden"/>
+<input name="referrer" type="hidden"/>
 <p class="sr-only"><label>Don’t fill this out if you're human: <input name="bot-field"/></label></p>
 <div class="grid-3">
 <label>ZIP Code <input inputmode="numeric" name="zip" pattern="\d{5}" placeholder="e.g., 25414" required=""/></label>
@@ -78,7 +79,7 @@
 <section class="dealer" id="dealer">
 <div class="container dealer-inner">
 <div class="dealer-copy">
-<h3>Proud to Recommend SunPower (Maxeon)</h3>
+<h3>Proud to Recommend premium (Maxeon)</h3>
 <p>Best-in-class efficiency and longevity. Ask about our <strong>premium panel</strong> and <strong>battery</strong> options for grid-tied, hybrid, and off-grid systems.</p>
 <ul class="ticks">
 <li>High efficiency, small footprint</li>
@@ -87,8 +88,8 @@
 </ul>
 </div>
 <div class="dealer-badge">
-<img alt="SunPower dealer placeholder badge" src="assets/img/sunpower-badge.png"/>
-<small class="note">Placeholder artwork — replace with official SunPower asset when authorized.</small>
+<img alt="premium dealer placeholder badge" src="assets/img/premium-badge.png"/>
+<small class="note">Placeholder artwork — replace with official premium asset when authorized.</small>
 </div>
 </div>
 </section>
@@ -139,23 +140,5 @@
 </div>
 </footer>
 <script defer="" src="assets/js/main.js"></script>
-
-<script data-utmfill="true">
-    (function() {
-      function getParam(name) {
-        try { return new URLSearchParams(window.location.search).get(name) || ''; }
-        catch(e) { return ''; }
-      }
-      function fillForm(form) {
-        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
-          var el=form.querySelector('input[name="'+k+'"]');
-          if (el) el.value=getParam(k);
-        });
-      }
-      document.addEventListener('DOMContentLoaded', function(){
-        document.querySelectorAll('form').forEach(fillForm);
-      });
-    })();
-    </script>
 </body>
 </html>
