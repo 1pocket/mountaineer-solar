@@ -1,102 +1,127 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>Contact | Mountaineer Solar</title>
-  <meta name="description" content="Request a free solar quote from Mountaineer Solar.">
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-
+<title>Contact | Mountaineer Solar</title>
+<meta content="Request a free solar quote from Mountaineer Solar." name="description"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="masthead">
-    <div class="container masthead-inner">
-      <div class="brand">
-        <img src="assets/img/logo.svg" alt="" class="logo">
-        <div class="brandlines">
-          <h1 class="site">Mountaineer Solar</h1>
-          <p class="tagline">Locally Rooted • Future Focused</p>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="calculator.html">Calculator</a>
-        <a href="contact.html" aria-current="page">Contact</a>
-      </nav>
-    </div>
-  </header>
+<header class="masthead">
+<div class="container masthead-inner">
+<div class="brand">
+<img alt="" class="logo" src="assets/img/logo.svg"/>
+<div class="brandlines">
+<h1 class="site">Mountaineer Solar</h1>
+<p class="tagline">Locally Rooted • Future Focused</p>
+</div>
+</div>
+<nav class="main-nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="calculator.html">Calculator</a>
+<a aria-current="page" href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+<main class="container narrow" id="main">
+<h2>Request a Free Quote</h2>
+<p>Fill this out and we’ll reach out with next steps.</p>
+<form action="thank-you.html" class="form" data-netlify="true" method="POST" name="quote" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="quote"/>
+<input name="page" type="hidden" value="contact"/>
+<input name="utm_source" type="hidden"/>
+<input name="utm_medium" type="hidden"/>
+<input name="utm_campaign" type="hidden"/>
+<input name="utm_term" type="hidden"/>
+<input name="utm_content" type="hidden"/>
+<p class="sr-only"><label>Don’t fill this out if you're human: <input name="bot-field"/></label></p>
+<div class="grid-3">
+<label>ZIP Code <input inputmode="numeric" name="zip" pattern="\d{5}" placeholder="e.g., 26505" required=""/></label>
+<label>Do you own the property?
+          <select name="ownership" required="">
+<option disabled="" selected="" value="">Choose…</option>
+<option>Yes</option>
+<option>No</option>
+<option>Not sure</option>
+</select>
+</label>
+<label>Timeframe
+          <select name="timeframe">
+<option>0–30 days</option>
+<option>1–3 months</option>
+<option>3–6 months</option>
+<option>Just researching</option>
+</select>
+</label>
+</div>
+<div class="grid-3">
+<label>Full Name <input name="name" required="" type="text"/></label>
+<label>Phone <input name="phone" required="" type="tel"/></label>
+<label>Email <input name="email" type="email"/></label>
+</div>
+<div class="grid-3">
+<label>Monthly Electric Bill ($) <input inputmode="decimal" name="monthly_bill" placeholder="e.g., 160"/></label>
+<label>Utility Provider <input name="utility" placeholder="e.g., Appalachian Power"/></label>
+<label>Battery Interest
+          <select name="battery_interest">
+<option>No / not sure</option>
+<option>Yes — backup power</option>
+<option>Yes — off-grid</option>
+</select>
+</label>
+</div>
+<label>Project notes <textarea name="message" placeholder="Roof/ground mount, shading, acreage, outbuildings, goals..." rows="5"></textarea></label>
+<button class="cta" type="submit">Get My Quote</button>
+<p class="fine">By submitting, you agree to our <a href="privacy.html">Privacy Policy</a> and consent to be contacted by phone/text/email about solar quotes. Consent is not a condition of purchase.</p>
+</form>
+<p class="contact-note">Prefer to call? <a href="tel:+1-304-555-0123">304-555-0123</a> or <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<img alt="" class="logo small" src="assets/img/logo.svg"/>
+<p>Serving all of West Virginia.</p>
+</div>
+<div>
+<h5>Pages</h5>
+<ul class="list">
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="calculator.html">Calculator</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact</h5>
+<p><a href="tel:+1-304-555-0123">304-555-0123</a><br/>
+<a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+</div>
+</div>
+</footer>
 
-  <main id="main" class="container narrow">
-    <h2>Request a Free Quote</h2>
-    <p>Fill this out and we’ll reach out with next steps.</p>
-
-    <form name="quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form">
-      <input type="hidden" name="form-name" value="quote">
-      <p class="sr-only">
-        <label>Don’t fill this out if you're human: <input name="bot-field"></label>
-      </p>
-
-      <label>Full Name
-        <input type="text" name="name" required>
-      </label>
-
-      <label>Email
-        <input type="email" name="email" required>
-      </label>
-
-      <label>Phone
-        <input type="tel" name="phone" placeholder="304-555-0123">
-      </label>
-
-      <label>Address (City / County)
-        <input type="text" name="address" placeholder="City, County">
-      </label>
-
-      <label>Property Type
-        <select name="type">
-          <option>Home</option>
-          <option>Farm / Off-Grid</option>
-          <option>Business / Church</option>
-        </select>
-      </label>
-
-      <label>Tell us about your goals
-        <textarea name="message" rows="5" placeholder="Lower bills, backup power, off-grid cabin..."></textarea>
-      </label>
-
-      <button type="submit" class="cta">Send</button>
-    </form>
-
-    <p class="contact-note">Prefer to call? <a href="tel:+1-304-555-0123">304-555-0123</a> or <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img src="assets/img/logo.svg" alt="" class="logo small">
-        <p>Serving all of West Virginia.</p>
-      </div>
-      <div>
-        <h5>Pages</h5>
-        <ul class="list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="calculator.html">Calculator</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <p><a href="tel:+1-304-555-0123">304-555-0123</a><br>
-        <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
-      </div>
-    </div>
-  </footer>
+<script data-utmfill="true">
+    (function() {
+      function getParam(name) {
+        try { return new URLSearchParams(window.location.search).get(name) || ''; }
+        catch(e) { return ''; }
+      }
+      function fillForm(form) {
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+          var el=form.querySelector('input[name="'+k+'"]');
+          if (el) el.value=getParam(k);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('form').forEach(fillForm);
+      });
+    })();
+    </script>
 </body>
 </html>

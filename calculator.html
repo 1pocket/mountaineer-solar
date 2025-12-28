@@ -1,142 +1,212 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <title>Solar Savings Calculator | Mountaineer Solar</title>
-  <meta name="description" content="Estimate your WV solar system size, production, cost, and payback using our simple calculator.">
-  
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-
+<title>Solar Savings Calculator | Mountaineer Solar</title>
+<meta content="Estimate your WV solar system size, production, cost, and payback using our simple calculator." name="description"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
 </head>
 <body>
-  <header class="masthead">
-    <div class="container masthead-inner">
-      <div class="brand">
-        <img src="assets/img/logo.svg" alt="" class="logo">
-        <div class="brandlines">
-          <h1 class="site">Mountaineer Solar</h1>
-          <p class="tagline">Locally Rooted • Future Focused</p>
-        </div>
-      </div>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="services.html">Services</a>
-        <a href="calculator.html" aria-current="page">Calculator</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main" class="container narrow">
-    <h2>Solar Savings Calculator</h2>
-    <p>Use your electric bill (or kWh usage) to estimate system size, production, cost, and simple payback. Numbers are ballpark—final proposals include a site visit and shading analysis.</p>
-
-    <form class="form" id="calcForm" onsubmit="return false;">
-      <fieldset class="card" style="border:none;">
-        <legend style="font-family:'Playfair Display',serif;font-weight:700;">Your Usage</legend>
-
-        <label>Monthly Electric Bill ($)
-          <input type="number" step="0.01" id="bill" placeholder="e.g., 150">
-        </label>
-
-        <label>or Monthly Usage (kWh)
-          <input type="number" step="1" id="kwh" placeholder="e.g., 1100">
-        </label>
-
-        <div class="grid-3">
-          <label>Utility Rate ($/kWh)
-            <input type="number" step="0.001" id="rate" value="0.13">
-          </label>
-          <label>Solar Production Factor (kWh per kW-year)
-            <input type="number" step="1" id="pf" value="1200">
-          </label>
-          <label>Installed Cost ($/W)
-            <input type="number" step="0.01" id="ppw" value="2.75">
-          </label>
-        </div>
-
-        <div class="grid-3">
-          <label>Battery (optional) — kWh size
-            <input type="number" step="1" id="batteryKwh" value="0">
-          </label>
-          <label>Battery Cost ($/kWh)
-            <input type="number" step="1" id="batteryPpkwh" value="900">
-          </label>
-          <label>ITC (Federal Tax Credit %)
-            <input type="number" step="1" id="itc" value="30">
-          </label>
-        </div>
-
-        <button class="cta" id="runCalc">Estimate Savings</button>
-      </fieldset>
-    </form>
-
-    <section class="card" id="results" style="display:none;">
-      <h3 style="margin-top:0;">Estimated System</h3>
-      <div class="grid-3">
-        <div>
-          <h4>System Size</h4>
-          <p><strong id="outSize">—</strong> kW DC</p>
-        </div>
-        <div>
-          <h4>Annual Production</h4>
-          <p><strong id="outAnnual">—</strong> kWh / yr</p>
-        </div>
-        <div>
-          <h4>Monthly Offset</h4>
-          <p><strong id="outOffset">—</strong> kWh / mo</p>
-        </div>
-      </div>
-
-      <div class="grid-3">
-        <div>
-          <h4>System Cost</h4>
-          <p>Before ITC: <strong id="outCostBefore">—</strong><br>
+<header class="masthead">
+<div class="container masthead-inner">
+<div class="brand">
+<img alt="" class="logo" src="assets/img/logo.svg"/>
+<div class="brandlines">
+<h1 class="site">Mountaineer Solar</h1>
+<p class="tagline">Locally Rooted • Future Focused</p>
+</div>
+</div>
+<nav class="main-nav">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a aria-current="page" href="calculator.html">Calculator</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+<main class="container narrow" id="main">
+<h2>Solar Savings Calculator</h2>
+<p>Use your electric bill (or kWh usage) to estimate system size, production, cost, and simple payback. Numbers are ballpark—final proposals include a site visit and shading analysis.</p>
+<form class="form" id="calcForm" onsubmit="return false;">
+<fieldset class="card" style="border:none;">
+<legend style="font-family:'Playfair Display',serif;font-weight:700;">Your Usage</legend>
+<label>Monthly Electric Bill ($)
+          <input id="bill" placeholder="e.g., 150" step="0.01" type="number"/>
+</label>
+<label>or Monthly Usage (kWh)
+          <input id="kwh" placeholder="e.g., 1100" step="1" type="number"/>
+</label>
+<div class="grid-3">
+<label>Utility Rate ($/kWh)
+            <input id="rate" step="0.001" type="number" value="0.13"/>
+</label>
+<label>Solar Production Factor (kWh per kW-year)
+            <input id="pf" step="1" type="number" value="1200"/>
+</label>
+<label>Installed Cost ($/W)
+            <input id="ppw" step="0.01" type="number" value="2.75"/>
+</label>
+</div>
+<div class="grid-3">
+<label>Battery (optional) — kWh size
+            <input id="batteryKwh" step="1" type="number" value="0"/>
+</label>
+<label>Battery Cost ($/kWh)
+            <input id="batteryPpkwh" step="1" type="number" value="900"/>
+</label>
+<label>ITC (Federal Tax Credit %)
+            <input id="itc" step="1" type="number" value="30"/>
+</label>
+</div>
+<button class="cta" id="runCalc">Estimate Savings</button>
+</fieldset>
+</form>
+<section class="card" id="results" style="display:none;">
+<h3 style="margin-top:0;">Estimated System</h3>
+<div class="grid-3">
+<div>
+<h4>System Size</h4>
+<p><strong id="outSize">—</strong> kW DC</p>
+</div>
+<div>
+<h4>Annual Production</h4>
+<p><strong id="outAnnual">—</strong> kWh / yr</p>
+</div>
+<div>
+<h4>Monthly Offset</h4>
+<p><strong id="outOffset">—</strong> kWh / mo</p>
+</div>
+</div>
+<div class="grid-3">
+<div>
+<h4>System Cost</h4>
+<p>Before ITC: <strong id="outCostBefore">—</strong><br/>
              After ITC: <strong id="outCostAfter">—</strong></p>
-        </div>
-        <div>
-          <h4>Battery (if any)</h4>
-          <p>Added cost: <strong id="outBattCost">—</strong></p>
-        </div>
-        <div>
-          <h4>Payback (Simple)</h4>
-          <p><strong id="outPayback">—</strong> years</p>
-        </div>
-      </div>
+</div>
+<div>
+<h4>Battery (if any)</h4>
+<p>Added cost: <strong id="outBattCost">—</strong></p>
+</div>
+<div>
+<h4>Payback (Simple)</h4>
+<p><strong id="outPayback">—</strong> years</p>
+</div>
+</div>
+<p class="fine">Assumptions: continuous load coverage not guaranteed; roof condition, shading, and interconnection can affect results. For a precise quote, <a href="contact.html">request a site visit</a>.</p>
+<p><a class="cta" href="contact.html">Request a Precise Quote</a>
+<section class="container narrow" style="margin-top:1.5rem;">
+<div class="card">
+<h3>Want a Copy of This Estimate?</h3>
+<p class="note">We’ll email your results and connect you with local installers for real pricing.</p>
+<form action="thank-you.html" class="form" data-netlify="true" method="POST" name="calculator_lead" netlify-honeypot="bot-field">
+<input name="form-name" type="hidden" value="calculator_lead"/>
+<input name="page" type="hidden" value="calculator"/>
+<input name="bill" type="hidden"/>
+<input name="kwh" type="hidden"/>
+<input name="system_size_kw" type="hidden"/>
+<input name="system_cost_after_itc" type="hidden"/>
+<input name="payback_years" type="hidden"/>
+<input name="utm_source" type="hidden"/>
+<input name="utm_medium" type="hidden"/>
+<input name="utm_campaign" type="hidden"/>
+<input name="utm_term" type="hidden"/>
+<input name="utm_content" type="hidden"/>
+<p class="sr-only"><label>Don’t fill this out if you're human: <input name="bot-field"/></label></p>
+<div class="grid-3">
+<label>ZIP Code <input inputmode="numeric" name="zip" pattern="\d{5}" required=""/></label>
+<label>Phone <input name="phone" required="" type="tel"/></label>
+<label>Email <input name="email" required="" type="email"/></label>
+</div>
+<button class="cta" type="submit">Email Me My Estimate</button>
+<p class="fine">By submitting, you agree to our <a href="privacy.html">Privacy Policy</a> and consent to be contacted by phone/text/email about solar quotes. Consent is not a condition of purchase.</p>
+</form>
+</div>
+</section>
+<script>
+    (function() {
+      function getParam(name) {
+        try {
+          return new URLSearchParams(window.location.search).get(name) || '';
+        } catch(e) { return ''; }
+      }
+      function fillUtm(form) {
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k) {
+          var el=form.querySelector('input[name="'+k+'"]');
+          if (el) el.value=getParam(k);
+        });
+      }
+      function numText(id) {
+        var el=document.getElementById(id);
+        return el ? (el.textContent||'').trim() : '';
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var form=document.querySelector('form[name="calculator_lead"]');
+        if (!form) return;
+        fillUtm(form);
+        form.addEventListener('submit', function() {
+          var bill=document.getElementById('bill'); var kwh=document.getElementById('kwh');
+          if (form.querySelector('input[name="bill"]')) form.querySelector('input[name="bill"]').value = bill ? bill.value : '';
+          if (form.querySelector('input[name="kwh"]')) form.querySelector('input[name="kwh"]').value = kwh ? kwh.value : '';
+          // Attempt to pull result fields by id if present
+          var sys=numText('outSystemKw') || numText('systemSize') || '';
+          var cost=numText('outAfterItc') || numText('afterItc') || '';
+          var pay=numText('outPayback') || numText('payback') || '';
+          if (form.querySelector('input[name="system_size_kw"]')) form.querySelector('input[name="system_size_kw"]').value=sys;
+          if (form.querySelector('input[name="system_cost_after_itc"]')) form.querySelector('input[name="system_cost_after_itc"]').value=cost;
+          if (form.querySelector('input[name="payback_years"]')) form.querySelector('input[name="payback_years"]').value=pay;
+        });
+      });
+    })();
+    </script>
+</p>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<img alt="" class="logo small" src="assets/img/logo.svg"/>
+<p>Serving all of West Virginia.</p>
+</div>
+<div>
+<h5>Pages</h5>
+<ul class="list">
+<li><a href="about.html">About</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact</h5>
+<p><a href="tel:+1-304-555-0123">304-555-0123</a><br/>
+<a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+</div>
+</div>
+</footer>
+<script defer="" src="assets/js/calc.js"></script>
 
-      <p class="fine">Assumptions: continuous load coverage not guaranteed; roof condition, shading, and interconnection can affect results. For a precise quote, <a href="contact.html">request a site visit</a>.</p>
-      <p><a href="contact.html" class="cta">Request a Precise Quote</a></p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img src="assets/img/logo.svg" alt="" class="logo small">
-        <p>Serving all of West Virginia.</p>
-      </div>
-      <div>
-        <h5>Pages</h5>
-        <ul class="list">
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Contact</h5>
-        <p><a href="tel:+1-304-555-0123">304-555-0123</a><br>
-        <a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/calc.js" defer></script>
+<script data-utmfill="true">
+    (function() {
+      function getParam(name) {
+        try { return new URLSearchParams(window.location.search).get(name) || ''; }
+        catch(e) { return ''; }
+      }
+      function fillForm(form) {
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+          var el=form.querySelector('input[name="'+k+'"]');
+          if (el) el.value=getParam(k);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('form').forEach(fillForm);
+      });
+    })();
+    </script>
 </body>
 </html>

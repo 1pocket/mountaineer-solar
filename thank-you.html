@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<title>Thanks | Mountaineer Solar</title>
+<meta content="Thanks — we received your request." name="description"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&amp;family=Playfair+Display:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header class="masthead">
+<div class="container masthead-inner">
+<a aria-label="Mountaineer Solar home" class="brand" href="index.html">
+<span aria-hidden="true" class="brand-mark">⛰️</span>
+<span class="brand-name">Mountaineer Solar</span>
+</a>
+<nav class="nav">
+<a href="services.html">Services</a>
+<a href="calculator.html">Calculator</a>
+<a href="contact.html">Contact</a>
+</nav>
+</div>
+</header>
+<main class="container narrow prose" id="main">
+<h2>Thanks — we got it.</h2>
+<p>We’ll review your info and reach out shortly. If you submitted outside business hours, expect a response the next business day.</p>
+<div class="card">
+<h3>What happens next</h3>
+<ol>
+<li>We verify your ZIP + usage to estimate a right-sized system.</li>
+<li>We connect you with one or more local installation partners for real pricing.</li>
+<li>You choose what fits — no obligation.</li>
+</ol>
+<p class="note">If you need immediate help, call the number in the footer (use a tracked number here when you set up partners).</p>
+</div>
+<p><a class="cta" href="calculator.html">Run the calculator</a> <a class="ghost" href="index.html">Back to home</a></p>
+</main>
+<footer class="footer">
+<div class="container footer-grid">
+<div>
+<h5>Mountaineer Solar</h5>
+<p class="fine">Lead request center for West Virginia solar quotes.</p>
+</div>
+<div>
+<h5>Quick links</h5>
+<ul>
+<li><a href="services.html">Services</a></li>
+<li><a href="calculator.html">Calculator</a></li>
+<li><a href="privacy.html">Privacy</a></li>
+</ul>
+</div>
+<div>
+<h5>Contact</h5>
+<p><a href="tel:+1-304-555-0123">304-555-0123</a><br/>
+<a href="mailto:hello@mountaineersolar.com">hello@mountaineersolar.com</a></p>
+<p class="fine">© 2025 Mountaineer Solar. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script data-utmfill="true">
+    (function() {
+      function getParam(name) {
+        try { return new URLSearchParams(window.location.search).get(name) || ''; }
+        catch(e) { return ''; }
+      }
+      function fillForm(form) {
+        ['utm_source','utm_medium','utm_campaign','utm_term','utm_content'].forEach(function(k){
+          var el=form.querySelector('input[name="'+k+'"]');
+          if (el) el.value=getParam(k);
+        });
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        document.querySelectorAll('form').forEach(fillForm);
+      });
+    })();
+    </script>
+</body>
+</html>
