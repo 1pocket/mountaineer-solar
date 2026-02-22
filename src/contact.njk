@@ -1,0 +1,81 @@
+---
+layout: base.njk
+title: Get Your Free Solar Quotes
+description: Request free solar quotes from vetted West Virginia installers. Compare proposals for your home, farm, or business.
+permalink: /contact/
+---
+
+<section class="section-pad">
+  <div class="container narrow">
+    <h2>Get Matched With Local Solar Installers</h2>
+    <p>Tell us about your property and we'll connect you with up to 3 vetted WV solar companies for free quotes.</p>
+
+    <div class="card lead-card">
+      <form class="form lead-form" id="quoteForm" novalidate>
+        <input type="hidden" name="form_name" value="quote">
+        <input type="hidden" name="page" value="contact">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="utm_term">
+        <input type="hidden" name="utm_content">
+        <input type="hidden" name="gclid">
+        <input type="hidden" name="fbclid">
+        <input type="hidden" name="msclkid">
+        <input type="hidden" name="referrer">
+        <input type="hidden" name="consent_text">
+        <input type="hidden" name="consent_timestamp">
+        <p class="sr-only"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+        <div class="grid-3">
+          <label>ZIP Code <input type="text" name="zip" inputmode="numeric" pattern="\d{5}" placeholder="e.g., 26505" required></label>
+          <label>Do you own the property?
+            <select name="ownership" required>
+              <option disabled selected value="">Choose&hellip;</option>
+              <option>Yes</option>
+              <option>No</option>
+              <option>Not sure</option>
+            </select>
+          </label>
+          <label>Timeframe
+            <select name="timeframe">
+              <option>0&ndash;30 days</option>
+              <option>1&ndash;3 months</option>
+              <option>3&ndash;6 months</option>
+              <option>Just researching</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid-3">
+          <label>Full Name <input type="text" name="name" required></label>
+          <label>Phone <input type="tel" name="phone" required></label>
+          <label>Email <input type="email" name="email" required></label>
+        </div>
+        <div class="grid-3">
+          <label>Monthly Electric Bill ($) <input type="number" name="monthly_bill" inputmode="decimal" placeholder="e.g., 160"></label>
+          <label>Utility Provider <input type="text" name="utility" placeholder="e.g., Appalachian Power"></label>
+          <label>Battery Interest
+            <select name="battery_interest">
+              <option>No / not sure</option>
+              <option>Yes &mdash; backup power</option>
+              <option>Yes &mdash; off-grid</option>
+            </select>
+          </label>
+        </div>
+        <label>Project notes <textarea name="message" rows="4" placeholder="Roof/ground mount, shading, acreage, goals..."></textarea></label>
+
+        <div class="consent-wrap">
+          <label class="consent-label">
+            <input type="checkbox" name="tcpa_consent" required>
+            <span class="consent-text">I agree to receive calls and texts, including by autodialer, from Mountaineer Solar and up to 3 solar installation companies at the phone number provided. Consent is not a condition of receiving a quote. Msg &amp; data rates may apply.</span>
+          </label>
+        </div>
+
+        <button class="cta" type="submit">Get My Free Quotes</button>
+        <p class="fine">By submitting, you agree to our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</p>
+      </form>
+    </div>
+
+    <p class="note" style="margin-top:1.5rem;">Prefer to reach us directly? <a href="tel:{{ site.phoneFull }}">{{ site.phone }}</a> or <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+  </div>
+</section>

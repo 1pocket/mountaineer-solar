@@ -1,0 +1,32 @@
+---
+layout: base.njk
+title: Solar Blog — West Virginia Solar Guides
+description: Expert guides on solar energy costs, incentives, and installation in West Virginia. Stay informed with Mountaineer Solar.
+permalink: /blog/
+---
+
+<section class="blog-list">
+  <div class="container narrow">
+    <h2>Solar Guides for West Virginia</h2>
+    <p>Expert articles on solar costs, incentives, installation, and energy savings in the Mountain State.</p>
+
+    {% for post in collections.posts %}
+    <article class="card post-card">
+      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
+      <p class="post-meta">{{ post.date | readableDate }}</p>
+      <p>{{ post.data.description }}</p>
+    </article>
+    {% endfor %}
+
+    {% if collections.posts.length == 0 %}
+    <p>Articles coming soon. Check back for expert guides on solar energy in West Virginia.</p>
+    {% endif %}
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h3>Ready to see what solar could save you?</h3>
+    <a class="cta" href="/calculator/">Try the Calculator</a>
+  </div>
+</section>

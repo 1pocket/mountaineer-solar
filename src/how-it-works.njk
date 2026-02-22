@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: How It Works
+description: Residential, commercial, farm, and off-grid solar options across West Virginia. See what our vetted installer partners offer.
+permalink: /how-it-works/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Solar Installer Matching",
+  "description": "Free service connecting West Virginia homeowners with vetted local solar installation companies for quotes and proposals.",
+  "areaServed": { "@type": "State", "name": "West Virginia" },
+  "provider": { "@type": "Organization", "name": "{{ site.name }}" }
+}
+</script>
+{% endblock %}
+
+<section class="how-it-works">
+  <div class="container">
+    <h2>How Mountaineer Solar Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Tell Us About Your Property</h3>
+        <p>Share your ZIP code, monthly electric bill, and what type of property you have. It takes about 30 seconds.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We Match You With Pros</h3>
+        <p>We send your request to up to 3 vetted, licensed solar installers who service your area of West Virginia.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Compare &amp; Choose</h3>
+        <p>You'll receive proposals with system designs, pricing, and financing options. Pick what works best &mdash; or walk away. No obligation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="offerings">
+  <div class="container">
+    <h2 class="text-center">What Our Partners Install</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h4>Residential Solar</h4>
+        <ul>
+          <li>Roof &amp; ground mounts</li>
+          <li>Battery backup (whole-home or critical loads)</li>
+          <li>Smart monitoring</li>
+          <li>Grid-tied and hybrid systems</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h4>Commercial &amp; Churches</h4>
+        <ul>
+          <li>Bill reduction &amp; peak shaving</li>
+          <li>Tax-advantaged financing options</li>
+          <li>Maintenance plans</li>
+          <li>Large-scale roof and ground arrays</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h4>Farms &amp; Off-Grid</h4>
+        <ul>
+          <li>Cabins &amp; remote sites</li>
+          <li>Pumps, fences, and ag loads</li>
+          <li>Hybrid inverter systems</li>
+          <li>Battery storage for outages</li>
+        </ul>
+      </article>
+    </div>
+
+    <h3>Common Add-Ons</h3>
+    <ul class="ticks">
+      <li>EV chargers</li>
+      <li>Backup generators</li>
+      <li>Snow guards &amp; critter guards</li>
+      <li>Panel-level monitoring</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section-pad" style="background: var(--paper);">
+  <div class="container narrow">
+    {% set formPage = "how-it-works" %}
+    {% include "lead-form.njk" %}
+  </div>
+</section>
+
+<section class="cta-strip">
+  <div class="container">
+    <h3>Want a quick estimate before getting quotes?</h3>
+    <a class="cta" href="/calculator/">Try the Calculator</a>
+  </div>
+</section>

@@ -1,0 +1,141 @@
+---
+layout: base.njk
+title: Solar Savings Calculator
+description: Estimate your West Virginia solar system size, cost, production, and payback period using our free calculator.
+permalink: /calculator/
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "West Virginia Solar Savings Calculator",
+  "applicationCategory": "UtilitiesApplication",
+  "operatingSystem": "Web Browser",
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+}
+</script>
+{% endblock %}
+
+<section class="calc-section">
+  <div class="container narrow">
+    <h2>Solar Savings Calculator</h2>
+    <p>Use your electric bill or kWh usage to estimate system size, production, cost, and simple payback. Numbers are ballpark &mdash; final proposals include a site visit and shading analysis.</p>
+
+    <form class="form" id="calcForm" onsubmit="return false;">
+      <fieldset class="card" style="border:none;">
+        <legend style="font-family:'Playfair Display',serif;font-weight:700;">Your Usage</legend>
+        <label>Monthly Electric Bill ($)
+          <input id="bill" type="number" step="0.01" placeholder="e.g., 150">
+        </label>
+        <label>or Monthly Usage (kWh)
+          <input id="kwh" type="number" step="1" placeholder="e.g., 1100">
+        </label>
+        <div class="grid-3">
+          <label>Utility Rate ($/kWh)
+            <input id="rate" type="number" step="0.001" value="0.13">
+          </label>
+          <label>Solar Production Factor (kWh per kW-year)
+            <input id="pf" type="number" step="1" value="1200">
+          </label>
+          <label>Installed Cost ($/W)
+            <input id="ppw" type="number" step="0.01" value="2.75">
+          </label>
+        </div>
+        <div class="grid-3">
+          <label>Battery (optional) &mdash; kWh size
+            <input id="batteryKwh" type="number" step="1" value="0">
+          </label>
+          <label>Battery Cost ($/kWh)
+            <input id="batteryPpkwh" type="number" step="1" value="900">
+          </label>
+          <label>Tax Credit (%)
+            <input id="itc" type="number" step="1" value="0">
+          </label>
+        </div>
+        <div class="itc-note">
+          <strong>Note:</strong> The federal 30% residential solar tax credit (ITC) expired December 31, 2025. Lease/PPA and commercial systems may still qualify for credits &mdash; ask your installer about current options.
+        </div>
+        <button class="cta" id="runCalc" type="button">Estimate Savings</button>
+      </fieldset>
+    </form>
+
+    <section class="card calc-results" id="results">
+      <h3 style="margin-top:0;">Estimated System</h3>
+      <div class="result-grid">
+        <div class="result-item">
+          <h4>System Size</h4>
+          <div class="result-value"><span id="outSize">&mdash;</span> <small>kW DC</small></div>
+        </div>
+        <div class="result-item">
+          <h4>Annual Production</h4>
+          <div class="result-value"><span id="outAnnual">&mdash;</span> <small>kWh/yr</small></div>
+        </div>
+        <div class="result-item">
+          <h4>Monthly Offset</h4>
+          <div class="result-value"><span id="outOffset">&mdash;</span> <small>kWh/mo</small></div>
+        </div>
+      </div>
+      <div class="result-grid">
+        <div class="result-item">
+          <h4>System Cost</h4>
+          <p>Before credit: <strong id="outCostBefore">&mdash;</strong><br>
+             After credit: <strong id="outCostAfter">&mdash;</strong></p>
+        </div>
+        <div class="result-item">
+          <h4>Battery (if any)</h4>
+          <p>Added cost: <strong id="outBattCost">&mdash;</strong></p>
+        </div>
+        <div class="result-item">
+          <h4>Simple Payback</h4>
+          <div class="result-value"><span id="outPayback">&mdash;</span> <small>years</small></div>
+        </div>
+      </div>
+      <p class="fine">Assumptions: continuous load coverage not guaranteed; roof condition, shading, and interconnection can affect results.</p>
+    </section>
+
+    <section class="card" style="margin-top:1.5rem;" id="calcLeadSection">
+      <h3>Want a Copy of This Estimate?</h3>
+      <p class="note">We'll email your results and connect you with local installers for real pricing.</p>
+      <form class="form lead-form" id="calcLeadForm" novalidate>
+        <input type="hidden" name="form_name" value="calculator_lead">
+        <input type="hidden" name="page" value="calculator">
+        <input type="hidden" name="bill">
+        <input type="hidden" name="kwh">
+        <input type="hidden" name="system_size_kw">
+        <input type="hidden" name="system_cost_after_itc">
+        <input type="hidden" name="payback_years">
+        <input type="hidden" name="utm_source">
+        <input type="hidden" name="utm_medium">
+        <input type="hidden" name="utm_campaign">
+        <input type="hidden" name="utm_term">
+        <input type="hidden" name="utm_content">
+        <input type="hidden" name="gclid">
+        <input type="hidden" name="fbclid">
+        <input type="hidden" name="msclkid">
+        <input type="hidden" name="referrer">
+        <input type="hidden" name="consent_text">
+        <input type="hidden" name="consent_timestamp">
+        <p class="sr-only"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+        <div class="grid-3">
+          <label>ZIP Code <input type="text" name="zip" inputmode="numeric" pattern="\d{5}" required></label>
+          <label>Phone <input type="tel" name="phone" required></label>
+          <label>Email <input type="email" name="email" required></label>
+        </div>
+        <div class="consent-wrap">
+          <label class="consent-label">
+            <input type="checkbox" name="tcpa_consent" required>
+            <span class="consent-text">I agree to receive calls and texts from Mountaineer Solar and up to 3 solar installation companies at the phone number provided. Consent is not a condition of receiving a quote.</span>
+          </label>
+        </div>
+        <button class="cta" type="submit">Email Me My Estimate</button>
+        <p class="fine">By submitting, you agree to our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</p>
+      </form>
+    </section>
+  </div>
+</section>
+
+{% block scripts %}
+<script defer src="/assets/js/calc.js"></script>
+{% endblock %}

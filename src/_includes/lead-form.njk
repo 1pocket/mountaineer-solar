@@ -1,0 +1,71 @@
+{# Reusable 2-step lead form. Pass `formPage` variable for source tracking. #}
+<div class="lead-card card">
+  <h3 class="form-heading">Get Matched With Local Solar Pros</h3>
+  <p class="note">Compare free quotes from vetted WV installers. No obligation.</p>
+  <form class="lead-form form" id="leadForm-{{ formPage | default('page') }}" novalidate>
+    <input type="hidden" name="form_name" value="lead">
+    <input type="hidden" name="page" value="{{ formPage | default(page.url) }}">
+    <input type="hidden" name="utm_source">
+    <input type="hidden" name="utm_medium">
+    <input type="hidden" name="utm_campaign">
+    <input type="hidden" name="utm_term">
+    <input type="hidden" name="utm_content">
+    <input type="hidden" name="gclid">
+    <input type="hidden" name="fbclid">
+    <input type="hidden" name="msclkid">
+    <input type="hidden" name="referrer">
+    <input type="hidden" name="consent_text">
+    <input type="hidden" name="consent_timestamp">
+    <p class="sr-only"><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
+
+    <!-- Step 1: Property info (low friction) -->
+    <div class="form-step form-step-1 active" data-step="1">
+      <div class="grid-3">
+        <label>
+          ZIP Code
+          <input type="text" name="zip" inputmode="numeric" pattern="\d{5}" placeholder="e.g., 25414" required>
+        </label>
+        <label>
+          Monthly Electric Bill ($)
+          <input type="number" name="monthly_bill" inputmode="decimal" placeholder="e.g., 180" required>
+        </label>
+        <label>
+          Property Type
+          <div class="radio-group">
+            <label class="radio-label"><input type="radio" name="property_type" value="Home" checked> Home</label>
+            <label class="radio-label"><input type="radio" name="property_type" value="Farm / Off-Grid"> Farm / Off-Grid</label>
+            <label class="radio-label"><input type="radio" name="property_type" value="Business / Church"> Business / Church</label>
+          </div>
+        </label>
+      </div>
+      <button type="button" class="cta step-next" data-next="2">See My Estimate</button>
+    </div>
+
+    <!-- Step 2: Contact info (revealed after step 1) -->
+    <div class="form-step form-step-2" data-step="2">
+      <div class="savings-preview" id="savingsPreview-{{ formPage | default('page') }}"></div>
+      <div class="grid-3">
+        <label>
+          Full Name
+          <input type="text" name="name" required>
+        </label>
+        <label>
+          Phone
+          <input type="tel" name="phone" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required>
+        </label>
+      </div>
+      <div class="consent-wrap">
+        <label class="consent-label">
+          <input type="checkbox" name="tcpa_consent" required>
+          <span class="consent-text">I agree to receive calls and texts, including by autodialer, from Mountaineer Solar and up to 3 solar installation companies at the phone number provided. Consent is not a condition of receiving a quote. Msg &amp; data rates may apply.</span>
+        </label>
+      </div>
+      <button type="submit" class="cta">Get My Free Quotes</button>
+      <p class="fine">By submitting, you agree to our <a href="/privacy/">Privacy Policy</a> and <a href="/terms/">Terms of Service</a>.</p>
+    </div>
+  </form>
+</div>

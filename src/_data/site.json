@@ -1,0 +1,13 @@
+{
+  "name": "Mountaineer Solar",
+  "tagline": "West Virginia's Solar Marketplace",
+  "url": "https://mountaineersolar.com",
+  "phone": "304-555-0123",
+  "phoneFull": "+1-304-555-0123",
+  "email": "hello@mountaineersolar.com",
+  "privacyEmail": "privacy@mountaineersolar.com",
+  "formEndpoint": "GOOGLE_APPS_SCRIPT_URL_HERE",
+  "ga4Id": "G-XXXXXXXXXX",
+  "clarityId": "CLARITY_PROJECT_ID",
+  "year": "2026"
+}

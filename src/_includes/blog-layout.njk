@@ -1,0 +1,58 @@
+---
+layout: base.njk
+ogType: article
+---
+
+{% block schema %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ date | isoDate }}",
+  "dateModified": "{{ date | isoDate }}",
+  "author": { "@type": "Organization", "name": "{{ site.name }}" },
+  "publisher": { "@type": "Organization", "name": "{{ site.name }}", "logo": { "@type": "ImageObject", "url": "{{ site.url }}/assets/img/logo.svg" } }
+}
+</script>
+{% endblock %}
+
+<section class="blog-post">
+  <div class="container">
+    <div class="blog-post-layout">
+      <article class="blog-post-content">
+        <h2>{{ title }}</h2>
+        <p class="post-meta">{{ date | readableDate }} &middot; {{ site.name }}</p>
+
+        <div class="post-content">
+          {{ content | safe }}
+        </div>
+
+        <!-- In-article CTA -->
+        <div class="card lead-card" style="margin-top: 2rem;">
+          <h3 class="form-heading">Ready to Compare Solar Quotes?</h3>
+          <p class="note">Get matched with vetted WV installers. Free, no obligation.</p>
+          <a href="/contact/" class="cta">Get Free Quotes</a>
+        </div>
+      </article>
+
+      <aside class="blog-sidebar">
+        <div class="card">
+          <h4>Solar Savings Calculator</h4>
+          <p class="note">See how much you could save with solar in West Virginia.</p>
+          <a href="/calculator/" class="cta" style="display:block;text-align:center;margin-top:0.75rem;">Try the Calculator</a>
+        </div>
+
+        <!-- Ad slot placeholder -->
+        <div class="ad-slot">Ad Space</div>
+
+        <div class="card">
+          <h4>Get Matched Free</h4>
+          <p class="note">Compare quotes from up to 3 local installers.</p>
+          <a href="/contact/" class="cta cta-barn" style="display:block;text-align:center;margin-top:0.75rem;">Get Quotes</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

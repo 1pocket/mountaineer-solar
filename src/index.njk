@@ -1,0 +1,145 @@
+---
+layout: base.njk
+title: West Virginia's Solar Marketplace
+description: Compare free solar quotes from vetted West Virginia installers. Mountaineer Solar connects homeowners, farms, and businesses with trusted local solar pros.
+---
+
+{# ---- HERO ---- #}
+<section class="hero">
+  <div class="container hero-content">
+    <h2>Find Trusted Solar Installers in West Virginia</h2>
+    <p>Compare free quotes from vetted local pros. No obligation, no pressure &mdash; just honest numbers for your home, farm, or business.</p>
+    <div class="cta-row">
+      <a class="cta" href="/contact/">Get Free Quotes</a>
+      <a class="ghost" href="/calculator/">Calculate Your Savings</a>
+    </div>
+    <div class="trust-line">
+      <span>Vetted Local Installers</span>
+      <span>100% Free Service</span>
+      <span>No Obligation</span>
+    </div>
+  </div>
+</section>
+
+{# ---- HOW IT WORKS ---- #}
+<section class="how-it-works">
+  <div class="container">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h3>Tell Us About Your Home</h3>
+        <p>Enter your ZIP code, monthly electric bill, and property type. Takes 30 seconds.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h3>We Match You With Installers</h3>
+        <p>We connect your request with up to 3 vetted, local solar companies that serve your area.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h3>Compare Quotes &amp; Save</h3>
+        <p>Review proposals side-by-side and choose the best fit. No obligation to buy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---- STATS BAR ---- #}
+<section class="stats-bar">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-value">8&ndash;12 kW</div>
+        <div class="stat-label">Average WV Home System</div>
+      </div>
+      <div>
+        <div class="stat-value">$22K&ndash;$34K</div>
+        <div class="stat-label">Typical Installed Cost</div>
+      </div>
+      <div>
+        <div class="stat-value">$1,200+/yr</div>
+        <div class="stat-label">Average Annual Savings</div>
+      </div>
+      <div>
+        <div class="stat-value">~14 Years</div>
+        <div class="stat-label">Typical Payback Period</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---- INLINE LEAD FORM ---- #}
+<section class="section-pad" style="background: var(--paper);">
+  <div class="container narrow">
+    {% set formPage = "home" %}
+    {% include "lead-form.njk" %}
+  </div>
+</section>
+
+{# ---- WHAT OUR PARTNERS INSTALL ---- #}
+<section class="offerings">
+  <div class="container">
+    <h2 class="text-center">Solar Solutions for Every West Virginian</h2>
+    <div class="grid-3">
+      <article class="card">
+        <h4>Residential Solar</h4>
+        <p>Roof-mount, ground-mount, and battery backup options to lower your bills and increase your home's value.</p>
+      </article>
+      <article class="card">
+        <h4>Farms &amp; Off-Grid</h4>
+        <p>Hybrid systems for cabins, barns, pumps, and remote sites &mdash; designed for long winters and steep terrain.</p>
+      </article>
+      <article class="card">
+        <h4>Commercial &amp; Churches</h4>
+        <p>Tailored systems for shops, churches, and municipal buildings to reduce operating costs.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# ---- SERVICE AREAS ---- #}
+<section class="service-areas">
+  <div class="container">
+    <h2>Solar Installers Across West Virginia</h2>
+    <div class="area-grid">
+      <a class="area-link" href="/solar-in/charleston-wv/">Charleston</a>
+      <a class="area-link" href="/solar-in/morgantown-wv/">Morgantown</a>
+      <a class="area-link" href="/solar-in/huntington-wv/">Huntington</a>
+      <a class="area-link" href="/solar-in/parkersburg-wv/">Parkersburg</a>
+      <a class="area-link" href="/solar-in/wheeling-wv/">Wheeling</a>
+      <a class="area-link" href="/solar-in/martinsburg-wv/">Martinsburg</a>
+      <a class="area-link" href="/solar-in/beckley-wv/">Beckley</a>
+      <a class="area-link" href="/solar-in/clarksburg-wv/">Clarksburg</a>
+    </div>
+  </div>
+</section>
+
+{# ---- BLOG TEASERS ---- #}
+{% set latestPosts = collections.posts | limit(3) %}
+{% if latestPosts.length %}
+<section class="blog-teasers">
+  <div class="container">
+    <h2>Solar Guides for West Virginia</h2>
+    <div class="grid-3">
+      {% for post in latestPosts %}
+      <a class="card teaser-card" href="{{ post.url }}">
+        <h4>{{ post.data.title }}</h4>
+        <p class="teaser-meta">{{ post.date | readableDate }}</p>
+        <p>{{ post.data.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{# ---- FINAL CTA ---- #}
+<section class="cta-strip">
+  <div class="container">
+    <h3>Curious what solar could save you?</h3>
+    <div>
+      <a class="cta" href="/calculator/">Try the Calculator</a>
+    </div>
+  </div>
+</section>
